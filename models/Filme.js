@@ -2,37 +2,31 @@ const Sequelize = require('sequelize');
 const db = require('./databaseConnection');
 
 const Filme = db.define('filme', {
-    _id: {
+    id: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
-    titulo: {
-        type: Sequelize.STRING(100),
-        allowNull: false,
+    name: {
+        type: Sequelize.STRING
     },
-    diretor: {
-        type: Sequelize.STRING(140),
-        allowNull: false,
+    director: {
+        type: Sequelize.STRING
     },
-    atores: {
-        type: Sequelize.STRING(200),
-        allowNull: false,
+    actors: {
+        type: Sequelize.ARRAY(Sequelize.STRING)
     },
-    genero: {
-        type: Sequelize.STRING(20),
-        allowNull: false,
+    genres: {
+        type: Sequelize.ARRAY(Sequelize.STRING)
     },
-    descricao: {
-        type: Sequelize.STRING(240),
-        allowNull: false,
-    }    
-}, {
-        timestamps: false
-})
+    votes: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
+    },
+    averageVote: {
+        type: Sequelize.FLOAT
+    }
+}); 
 
-//Cria a tabela
 Filme.sync();
 
 module.exports = Filme;

@@ -38,4 +38,9 @@ Rodar o projeto usando o nodemon
 ### nodemon app.js
 
 -----------------------------
-OBS: Em desenvolvimento
+ADIÇÃO DE TESTES NO CÓDIGO
+-----------------------------
+Adicionar testes ao código é uma prática fundamental para garantir a qualidade do software e evitar erros ao longo do desenvolvimento.
+É importante ter em mente que testes são uma forma de validar o comportamento esperado das funcionalidades do seu aplicativo.
+
+Lembre-se de adicionar as dependências necessárias (supertest, jest, jsonwebtoken e faker) ao seu projeto antes de executar o teste.

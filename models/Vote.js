@@ -1,27 +1,23 @@
 const Sequelize = require('sequelize');
 const db = require('./databaseConnection');
 
-const User = db.define('users', {
+const Vote = db.define('votes', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    username: {
+    userId: {
         type: Sequelize.STRING
     },
-    password: {
+    movieId: {
         type: Sequelize.STRING
     },
-    role: {
-        type: Sequelize.ENUM,
-        values: ['user', 'admin']
-    },
-    isActive: {
-        type: Sequelize.BOOLEAN
+    vote: {
+        type: Sequelize.INTEGER
     }
 });
 
-User.sync();
+Vote.sync();
 
-module.exports = User;
+module.exports = Vote;
